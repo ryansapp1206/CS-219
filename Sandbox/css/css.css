@@ -1,9 +1,5 @@
-#testCSS {
-    color: red;
-    font-size: 20px;
-    text-align: center;
-}
+p{
+    text-transform:capitalize;
 
-.test{
-    color: blue;
+    text-indent: 50px
 }

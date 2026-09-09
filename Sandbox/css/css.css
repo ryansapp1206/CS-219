@@ -1,5 +1,12 @@
-p{
-    text-transform:capitalize;
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
 
-    text-indent: 50px
+table, th, td {
+    border: 1px solid black;
+}
+
+th{
+    height: 70px;
 }

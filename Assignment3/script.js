@@ -4,15 +4,17 @@ const form = document.getElementById("textForm");
 let numInput = "";
 
 form.addEventListener("submit", function(event){
-    // Prevents page refresh after input
     event.preventDefault();
-
+    
     numInput = input.value;
 
-    if(numInput % 2 == 0){
-        document.getElementById("isOddOrEven").innerHTML = "Even";
+    if(numInput === "" || isNaN(numInput)){
+        document.getElementById("isOddOrEven").innerHTML = numInput + " Improper input, please try again.";
+    }
+    else if(numInput % 2 == 0){
+        document.getElementById("isOddOrEven").innerHTML = numInput + " is Even";
     }
     else{
-        document.getElementById("isOddOrEven").innerHTML = "Odd";
+        document.getElementById("isOddOrEven").innerHTML =  numInput + " is Odd";
     }
 });

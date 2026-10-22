@@ -9,11 +9,13 @@
         <p id="demo"></p>
 
         <script>
-            let i = 0;
-
-            while(i < 10){
-                document.write(i + "<br>")
-                i++;
+            function add(a, b){
+                return a + b;
             }
+
+            let sum1 = add(5,5);
+            let sum2 = add(5,50);
+
+            document.getElementById("demo").innerHTML = "Sum1 and Sum2 respectively: " + sum1 + ", " + sum2;
         </script>
 </html>

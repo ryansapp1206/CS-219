@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 4</title>
+</head>
+<body>
+    <h1>Please enter a valid email address:</h1>
+    <form action="#" method="post">
+        <input type="email" id="email" name="email" required>
+        <button type="submit">Submit</button>
+    </form>
+
+<footer>
+    <script>
+
+    </script>
+</footer>
+</body>
+</html>
+
+function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+        document.querySelector("form").addEventListener("submit", function(event) {
+            const email = document.getElementById("email").value;
+            if (!validateEmail(email)) {
+                event.preventDefault();
+                alert("Please enter a valid email address.");
+            }
+        });

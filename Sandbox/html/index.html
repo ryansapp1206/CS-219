@@ -9,13 +9,17 @@
         <p id="demo"></p>
 
         <script>
-            function add(a, b){
-                return a + b;
+            function Person(first, last, age, eye){
+                this.firstName = first;
+                this.lastName = last;
+                this.age = age;
+                this.eyeColor = eye;
             }
 
-            let sum1 = add(5,5);
-            let sum2 = add(5,50);
+            const myFather = new Person("John", "Doe", 50, "blue");
+            const myMother = new Person("Sally", "Rally", 48, "green");
 
-            document.getElementById("demo").innerHTML = "Sum1 and Sum2 respectively: " + sum1 + ", " + sum2;
+            document.getElementById("demo").innerHTML =
+                "My father is " + myFather.age + "." + " My mother is " + myMother.age + "."
         </script>
 </html>

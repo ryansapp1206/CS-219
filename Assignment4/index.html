@@ -7,26 +7,46 @@
 <body>
     <h1>Please enter a valid email address:</h1>
     <form action="#" method="post">
-        <input type="email" id="email" name="email" required>
+        <input type="text" id="email" name="email">
         <button type="submit">Submit</button>
     </form>
 
-<footer>
-    <script>
+    <footer>
+        <script>
+            let emailList = [
+                "student@university.edu",
+                "john.doe@gmail.com",
+                "user@domain",
+                "user@domain.",
+                "@gmail.com"
+            ];
+            
+            testEmailValidation(emailList);
 
-    </script>
-</footer>
+            function isValidEmail(email) {
+                const regExpression = /^[\w.-]+@[\w.-]+\.[a-z]+$/i;
+                return regExpression.test(email);
+            }
+
+            document.querySelector("form").addEventListener("submit", function(event) {
+                const email = document.getElementById("email").value;
+                if (!isValidEmail(email)) {
+                    event.preventDefault();
+                    alert("Please enter a valid email address.");
+                }
+            });
+            
+            function testEmailValidation(emailList) {
+                for(let i = 0; i < emailList.length; i++) {
+                    const email = emailList[i];
+                    if (isValidEmail(email)) {
+                        console.log(email + " : Valid");
+                    } else {
+                        console.log(email + " : Invalid");
+                    }
+                }
+            }
+        </script>
+    </footer>
 </body>
 </html>
-
-function validateEmail(email) {
-            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return re.test(email);
-        }
-        document.querySelector("form").addEventListener("submit", function(event) {
-            const email = document.getElementById("email").value;
-            if (!validateEmail(email)) {
-                event.preventDefault();
-                alert("Please enter a valid email address.");
-            }
-        });
